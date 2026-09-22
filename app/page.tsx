@@ -2,9 +2,8 @@
 
 import React, { useEffect, useRef, useState, ReactNode } from 'react';
 import { 
-  Activity, 
-  CreditCard, 
-  MessageSquare, 
+  Activity,
+  MessageSquare,
   ArrowUpRight, 
   BarChart3, 
   Smartphone,
@@ -288,16 +287,6 @@ export default function PremiumLanding() {
           </div>
         </div>
 
-        {/* Desktop Floating Sticker 2 */}
-        <div className="absolute bottom-[15%] lg:right-8 xl:right-[10%] 2xl:right-[15%] animate-[float-delayed_7s_ease-in-out_infinite] hidden lg:flex items-center gap-4 bg-white/5 backdrop-blur-2xl border border-white/10 px-5 py-4 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] z-0">
-          <div className="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center border border-emerald-500/30 shrink-0">
-            <CreditCard className="w-4 h-4 text-emerald-400" />
-          </div>
-          <div className="text-left">
-            <div className="text-[10px] text-emerald-300/70 font-semibold uppercase tracking-widest mb-0.5">Payment Captured</div>
-            <div className="text-sm font-medium text-white/90">+$15.00 via Stripe</div>
-          </div>
-        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/[0.02] backdrop-blur-md mb-6 shadow-lg">
@@ -335,7 +324,7 @@ export default function PremiumLanding() {
           </div>
 
           {/* MOBILE STICKERS ROW (Tighter spacing, optimized for mobile screens) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md lg:hidden z-10 px-2">
+          <div className="flex w-full max-w-xs lg:hidden z-10 px-2">
             <div className="flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-4 py-3 rounded-2xl shadow-lg">
               <div className="w-8 h-8 bg-indigo-500/20 rounded-full flex items-center justify-center border border-indigo-500/30 shrink-0">
                 <MessageSquare className="w-3.5 h-3.5 text-indigo-400" />
@@ -343,16 +332,6 @@ export default function PremiumLanding() {
               <div className="text-left">
                 <div className="text-[9px] text-indigo-300/70 font-semibold uppercase tracking-widest">Automated Booking</div>
                 <div className="text-xs font-medium text-white/90">"Book 1 spot for Dance"</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-2xl border border-white/10 px-4 py-3 rounded-2xl shadow-lg">
-              <div className="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center border border-emerald-500/30 shrink-0">
-                <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
-              </div>
-              <div className="text-left">
-                <div className="text-[9px] text-emerald-300/70 font-semibold uppercase tracking-widest">Payment Captured</div>
-                <div className="text-xs font-medium text-white/90">+$15.00 via Stripe</div>
               </div>
             </div>
           </div>
