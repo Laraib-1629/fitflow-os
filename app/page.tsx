@@ -125,6 +125,42 @@ const WebMockup = ({
 export default function PremiumLanding() {
   const [activeStep, setActiveStep] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [form, setForm] = useState({ name: '', number: '', email: '', studioName: '', location: '', city: '' });
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitError('');
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Failed to submit.');
+      setSubmitted(true);
+    } catch {
+      setSubmitError('Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => {
+      setSubmitted(false);
+      setSubmitError('');
+      setForm({ name: '', number: '', email: '', studioName: '', location: '', city: '' });
+    }, 300);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -135,7 +171,7 @@ export default function PremiumLanding() {
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsModalOpen(false);
+      if (e.key === 'Escape') closeModal();
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
@@ -211,38 +247,112 @@ export default function PremiumLanding() {
         }
       `}} />
 
-      {/* INFO DIALOGUE BOX */}
+      {/* REGISTRATION MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
-          <div 
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
-            onClick={() => setIsModalOpen(false)}
-          />
-          <div className="relative w-full max-w-md bg-[#0A0A0B] border border-white/10 rounded-3xl p-8 shadow-[0_0_80px_rgba(16,185,129,0.15)] overflow-hidden animate-modal-enter text-center">
-            <div className="absolute top-[-20%] right-[-20%] w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
-            
-            <button 
-              onClick={() => setIsModalOpen(false)} 
-              className="absolute top-6 right-6 text-white/30 hover:text-white transition-colors"
-            >
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={closeModal} />
+          <div className="relative w-full max-w-lg bg-[#0A0A0B] border border-white/10 rounded-3xl shadow-[0_0_80px_rgba(16,185,129,0.12)] overflow-hidden animate-modal-enter">
+            <div className="absolute top-[-20%] right-[-20%] w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+
+            <button onClick={closeModal} className="absolute top-5 right-5 text-white/30 hover:text-white transition-colors z-10">
               <X className="w-5 h-5" />
             </button>
-            
-            <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mx-auto mb-6 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-              <Sparkles className="w-6 h-6 text-emerald-400" />
-            </div>
-            
-            <h3 className="text-2xl font-medium text-white mb-3">Public Beta Rolling Out</h3>
-            <p className="text-white/50 text-sm leading-relaxed mb-8">
-              We are currently scaling our infrastructure with select private beta studios. Public 30-day free trials will automatically roll out starting in <strong className="text-white font-medium">early October 2026</strong>. Stay tuned!
-            </p>
-            
-            <button 
-              onClick={() => setIsModalOpen(false)} 
-              className="w-full bg-white text-black font-bold uppercase tracking-widest text-[10px] py-4 rounded-xl hover:bg-emerald-50 transition-colors shadow-lg"
-            >
-              Got it, thanks
-            </button>
+
+            {submitted ? (
+              <div className="p-10 text-center flex flex-col items-center">
+                <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                  <CheckCircle2 className="w-7 h-7 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-medium text-white mb-3">You're on the list!</h3>
+                <p className="text-white/50 text-sm leading-relaxed mb-8">We'll reach out shortly to get your studio set up. Get ready to reclaim your evenings.</p>
+                <button onClick={closeModal} className="w-full bg-white text-black font-bold uppercase tracking-widest text-[10px] py-4 rounded-xl hover:bg-emerald-50 transition-colors">
+                  Close
+                </button>
+              </div>
+            ) : (
+              <div className="p-8">
+                <div className="mb-7">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                      <Sparkles className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">Start Free Trial</span>
+                  </div>
+                  <h3 className="text-2xl font-medium text-white mt-3">Set up your studio.</h3>
+                  <p className="text-white/40 text-sm mt-1">Takes 2 minutes. No credit card required.</p>
+                </div>
+
+                <form onSubmit={handleFormSubmit} className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] uppercase tracking-widest text-white/40 font-semibold">Name</label>
+                      <input
+                        name="name" type="text" required value={form.name} onChange={handleFormChange}
+                        placeholder="Jane Smith"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/[0.07] transition-all"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] uppercase tracking-widest text-white/40 font-semibold">Phone Number</label>
+                      <input
+                        name="number" type="tel" required value={form.number} onChange={handleFormChange}
+                        placeholder="+1 234 567 8900"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/[0.07] transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10px] uppercase tracking-widest text-white/40 font-semibold">Email Address</label>
+                    <input
+                      name="email" type="email" required value={form.email} onChange={handleFormChange}
+                      placeholder="jane@yourstudio.com"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/[0.07] transition-all"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10px] uppercase tracking-widest text-white/40 font-semibold">Studio Name</label>
+                    <input
+                      name="studioName" type="text" required value={form.studioName} onChange={handleFormChange}
+                      placeholder="Oasis Yoga Studio"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/[0.07] transition-all"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] uppercase tracking-widest text-white/40 font-semibold">Location</label>
+                      <input
+                        name="location" type="text" required value={form.location} onChange={handleFormChange}
+                        placeholder="123 Main St"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/[0.07] transition-all"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] uppercase tracking-widest text-white/40 font-semibold">City</label>
+                      <input
+                        name="city" type="text" required value={form.city} onChange={handleFormChange}
+                        placeholder="Casablanca"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/[0.07] transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  {submitError && (
+                    <p className="text-red-400 text-xs text-center">{submitError}</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full bg-white text-black font-bold uppercase tracking-widest text-[10px] py-4 rounded-xl hover:bg-emerald-50 transition-colors shadow-lg mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? 'Submitting...' : 'Start My Free Trial'}
+                  </button>
+                </form>
+              </div>
+            )}
           </div>
         </div>
       )}
