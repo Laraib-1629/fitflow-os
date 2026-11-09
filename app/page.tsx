@@ -1119,8 +1119,8 @@ export default function ClinicOSLanding() {
             </a>
           </div>
 
-          {/* Right — CTA */}
-          <div className="flex flex-col items-center md:items-end justify-center gap-4 shrink-0">
+          {/* Right — CTA + Logo */}
+          <div className="flex flex-col items-center md:items-end justify-center gap-6 shrink-0">
             <button
               onClick={() => setIsModalOpen(true)}
               className="group flex items-center gap-3 bg-white text-black px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] whitespace-nowrap"
@@ -1129,6 +1129,30 @@ export default function ClinicOSLanding() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
             <span className="text-xs text-white/20 tracking-wide">No commitment required</span>
+
+            {/* Sharp Point Advantage Logo */}
+            <div className="flex flex-col items-center gap-2 opacity-60 hover:opacity-90 transition-opacity">
+              <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="88" fill="none" stroke="#8a9baa" strokeWidth="5"/>
+                {/* Navy left-pointing arrow */}
+                <path d="M125,42 L62,100 L125,158 L108,158 L45,100 L108,42 Z" fill="#1e2d4a"/>
+                {/* Silver right-pointing arrow */}
+                <path d="M88,42 L151,100 L88,158 L105,158 L168,100 L105,42 Z" fill="#a8b4be" opacity="0.85"/>
+                {/* Burgundy accent square */}
+                <rect x="120" y="124" width="26" height="26" fill="#7a2a2a" rx="2"/>
+              </svg>
+              <div className="text-center">
+                <div className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/70" style={{ fontFamily: 'sans-serif', letterSpacing: '0.25em' }}>
+                  Sharp Point Advantage
+                </div>
+                <div className="flex items-center justify-center gap-1.5 my-0.5">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[8px] uppercase tracking-widest text-white/40">LLC</span>
+                  <div className="h-px w-6 bg-white/30" />
+                </div>
+                <div className="text-[8px] text-white/35 tracking-widest italic">Intelligence That Works For You</div>
+              </div>
+            </div>
           </div>
 
         </div>
