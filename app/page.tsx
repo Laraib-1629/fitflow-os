@@ -1067,10 +1067,10 @@ export default function ClinicOSLanding() {
                   <p className="text-sm md:text-base text-white/40 leading-relaxed mb-6">
                     A deep look at how AI agents handle appointment booking, lab routing, and patient follow-ups — freeing your clinical staff to focus entirely on patient care. Covers real deployment data from MENA-region clinics.
                   </p>
-                  <button className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 px-5 py-3 rounded-full transition-all duration-200">
+                  <a href="https://www.luminovaventures.com/insights/intelligence-driven-innovation-osint-as-a-strategic-enabler-in-defense-dual-use-tech" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 px-5 py-3 rounded-full transition-all duration-200">
                     Read Article
                     <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
                 </div>
 
                 {/* Discussion card */}
@@ -1084,15 +1084,53 @@ export default function ClinicOSLanding() {
                   <p className="text-sm md:text-base text-white/40 leading-relaxed mb-6">
                     An in-depth conversation on how AI-powered operating systems are redefining patient experience across private clinics, dental studios, and specialty practices — and what the next five years look like for healthcare automation.
                   </p>
-                  <button className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-violet-300 bg-violet-500/10 hover:bg-violet-500/15 border border-violet-500/20 px-5 py-3 rounded-full transition-all duration-200">
+                  <a href="https://www.youtube.com/watch?v=x0wSZLA4ZAc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-violet-300 bg-violet-500/10 hover:bg-violet-500/15 border border-violet-500/20 px-5 py-3 rounded-full transition-all duration-200">
                     Watch Discussion
                     <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
                 </div>
 
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════ */}
+      {/* SHARP POINT ADVANTAGE — DISCUSS YOUR PRIORITIES                       */}
+      {/* ══════════════════════════════════════════════════════════════════════ */}
+      <section className="relative z-10 py-20 md:py-28 px-6 border-t border-white/[0.05] bg-[#040404]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-16">
+
+          {/* Left — heading + body + email */}
+          <div className="flex-1 max-w-xl">
+            <div className="text-[10px] font-bold uppercase tracking-widest text-white/25 mb-5">Sharp Point Advantage</div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight mb-6">
+              Discuss your clinic's priorities.
+            </h2>
+            <p className="text-base md:text-lg text-white/40 font-light leading-relaxed mb-8">
+              Get in touch to discuss your challenge and whether ClinicOS would be a good fit for your practice.
+            </p>
+            <a
+              href="mailto:kile.sears@sharppointadvantage.com"
+              className="text-sm text-white/40 hover:text-white/70 transition-colors tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-white/50"
+            >
+              kile.sears@sharppointadvantage.com
+            </a>
+          </div>
+
+          {/* Right — CTA */}
+          <div className="flex flex-col items-center md:items-end justify-center gap-4 shrink-0">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="group flex items-center gap-3 bg-white text-black px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] whitespace-nowrap"
+            >
+              Request an Intro Call
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+            <span className="text-xs text-white/20 tracking-wide">No commitment required</span>
+          </div>
+
         </div>
       </section>
 
