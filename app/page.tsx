@@ -988,10 +988,10 @@ export default function ClinicOSLanding() {
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Insights & Appearances</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-3">
-              Platform milestones, technical credentials,<br className="hidden md:block" /> and published resources.
+              Professional milestones, academic credentials,<br className="hidden md:block" /> and public contributions.
             </h2>
             <p className="text-base text-white/40 font-light max-w-2xl">
-              Articles, conversations, and real-world implementation insights from building AI for modern clinics.
+              Kile Sears helps defense-tech leaders clarify strategic priorities through military intelligence, national security, and risk analysis.
             </p>
           </div>
 
@@ -1000,30 +1000,30 @@ export default function ClinicOSLanding() {
             {/* Left — Founder card + background bullets */}
             <div className="lg:w-[38%] space-y-8">
 
-              {/* Founder photo card */}
+              {/* Kile photo card */}
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] bg-[#0A0A0B] shadow-[0_0_60px_rgba(0,0,0,0.5)]">
                 <img
                   src="/founder.jpg"
-                  alt="Founder"
+                  alt="Kile Sears"
                   className="w-full h-[380px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-1">Founder & CEO</div>
-                  <div className="text-lg font-medium text-white">ClinicOS</div>
-                  <div className="text-sm text-white/50 mt-0.5">Healthcare × AI Infrastructure</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-1">Strategic Advisor</div>
+                  <div className="text-lg font-medium text-white">Kile Sears</div>
+                  <div className="text-sm text-white/50 mt-0.5">Sharp Point Advantage LLC</div>
                 </div>
               </div>
 
-              {/* Platform background */}
+              {/* Career Background */}
               <div>
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-5">Platform Background</h3>
+                <h3 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-5">Career Background</h3>
                 <ul className="space-y-4">
                   {[
-                    'Built for multi-specialty clinics and solo practices across MENA',
-                    'Custom AI agents trained per clinic — not one-size-fits-all models',
-                    'WhatsApp, SMS, and web chat deployed simultaneously from day one',
-                    'Zero-disruption onboarding with live support in 7 days',
+                    'Semantic Visions: Strategic Partner for U.S. Intelligence Solutions.',
+                    'Defense Information Systems Agency: Cyber and telecommunications risk initiatives.',
+                    'Pentagon: Contributions to insider-threat and intelligence policy.',
+                    'U.S. Department of Homeland Security: National-security intelligence analysis.',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-white/50">
                       <div className="w-1.5 h-1.5 bg-cyan-400/50 rounded-full mt-[7px] shrink-0" />
@@ -1035,11 +1035,11 @@ export default function ClinicOSLanding() {
 
               {/* Qualifications */}
               <div>
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-5">Technical Credentials</h3>
+                <h3 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-5">Qualifications</h3>
                 <ul className="space-y-4">
                   {[
-                    'GPT-4o fine-tuned on clinic-specific datasets per deployment',
-                    'Google Calendar & Outlook deep integration, real-time sync',
+                    'B.S. Criminal Justice / Law Enforcement Administration — Indiana University.',
+                    'M.P.S. Applied Intelligence, Cyber Focus — Georgetown University.',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-white/50">
                       <div className="w-1.5 h-1.5 bg-violet-400/50 rounded-full mt-[7px] shrink-0" />
@@ -1062,10 +1062,10 @@ export default function ClinicOSLanding() {
                     <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full">Article</span>
                   </div>
                   <h4 className="text-lg md:text-xl font-medium text-white mb-3 leading-snug">
-                    AI-Driven Automation: How Clinics Cut Admin Overhead by 40% in 30 Days
+                    Intelligence-Driven Innovation: OSINT as a Strategic Enabler in Defense &amp; Dual-Use Tech
                   </h4>
                   <p className="text-sm md:text-base text-white/40 leading-relaxed mb-6">
-                    A deep look at how AI agents handle appointment booking, lab routing, and patient follow-ups — freeing your clinical staff to focus entirely on patient care. Covers real deployment data from MENA-region clinics.
+                    Kile examines how open-source intelligence can inform defense and dual-use innovation, including due diligence, early warning, and strategic planning.
                   </p>
                   <a href="https://www.luminovaventures.com/insights/intelligence-driven-innovation-osint-as-a-strategic-enabler-in-defense-dual-use-tech" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 px-5 py-3 rounded-full transition-all duration-200">
                     Read Article
@@ -1079,10 +1079,10 @@ export default function ClinicOSLanding() {
                     <span className="text-[10px] font-bold uppercase tracking-widest text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full">Discussion</span>
                   </div>
                   <h4 className="text-lg md:text-xl font-medium text-white mb-3 leading-snug">
-                    The Future of Healthcare Operations: AI, Multilingual Support, and 24/7 Patient Access
+                    Future Risks in Intelligence
                   </h4>
                   <p className="text-sm md:text-base text-white/40 leading-relaxed mb-6">
-                    An in-depth conversation on how AI-powered operating systems are redefining patient experience across private clinics, dental studios, and specialty practices — and what the next five years look like for healthcare automation.
+                    Kile discusses synthetic media, state-criminal convergence, and supply-chain vulnerabilities, alongside the role of multilingual open-source intelligence and AI-enabled analysis in identifying early warning signals.
                   </p>
                   <a href="https://www.youtube.com/watch?v=x0wSZLA4ZAc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-violet-300 bg-violet-500/10 hover:bg-violet-500/15 border border-violet-500/20 px-5 py-3 rounded-full transition-all duration-200">
                     Watch Discussion
