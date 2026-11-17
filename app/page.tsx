@@ -1033,21 +1033,6 @@ export default function ClinicOSLanding() {
                 </ul>
               </div>
 
-              {/* Qualifications */}
-              <div>
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-5">Qualifications</h3>
-                <ul className="space-y-4">
-                  {[
-                    'B.S. Criminal Justice / Law Enforcement Administration — Indiana University.',
-                    'M.P.S. Applied Intelligence, Cyber Focus — Georgetown University.',
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-white/50">
-                      <div className="w-1.5 h-1.5 bg-violet-400/50 rounded-full mt-[7px] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
 
             {/* Right — Writing & speaking cards */}
