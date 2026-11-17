@@ -1100,51 +1100,46 @@ export default function ClinicOSLanding() {
       {/* SHARP POINT ADVANTAGE — DISCUSS YOUR PRIORITIES                       */}
       {/* ══════════════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 py-20 md:py-28 px-6 border-t border-white/[0.05] bg-[#040404]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-          {/* Left — heading + body + email */}
-          <div className="flex-1 max-w-xl">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-white/25 mb-5">Sharp Point Advantage</div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight mb-6">
+          {/* Left — Logo card as visual anchor */}
+          <div className="shrink-0 flex flex-col items-center gap-4 bg-[#eeecea] rounded-3xl px-10 py-8 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
+            <img src="/spa-logo.png" alt="Sharp Point Advantage" className="w-36 h-36 object-contain" />
+            <div className="text-center">
+              <div className="text-[11px] font-bold uppercase text-[#1e2d4a]" style={{ letterSpacing: '0.22em' }}>
+                Sharp Point Advantage
+              </div>
+              <div className="flex items-center justify-center gap-2 my-1.5">
+                <div className="h-px w-10 bg-[#1e2d4a]/30" />
+                <span className="text-[9px] uppercase tracking-widest text-[#1e2d4a]/50">LLC</span>
+                <div className="h-px w-10 bg-[#1e2d4a]/30" />
+              </div>
+              <div className="text-[9px] text-[#1e2d4a]/50 tracking-widest italic">Intelligence That Works For You</div>
+            </div>
+          </div>
+
+          {/* Right — heading + body + email + CTA */}
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight mb-5">
               Discuss your clinic's priorities.
             </h2>
-            <p className="text-base md:text-lg text-white/40 font-light leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-white/40 font-light leading-relaxed mb-6 max-w-lg">
               Get in touch to discuss your challenge and whether ClinicOS would be a good fit for your practice.
             </p>
             <a
               href="mailto:kile.sears@sharppointadvantage.com"
-              className="text-sm text-white/40 hover:text-white/70 transition-colors tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-white/50"
+              className="text-sm text-white/30 hover:text-white/60 transition-colors tracking-wide underline underline-offset-4 decoration-white/15 hover:decoration-white/40 mb-8"
             >
               kile.sears@sharppointadvantage.com
             </a>
-          </div>
-
-          {/* Right — CTA + Logo */}
-          <div className="flex flex-col items-center md:items-end justify-center gap-6 shrink-0">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="group flex items-center gap-3 bg-white text-black px-8 md:px-10 py-4 md:py-5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] whitespace-nowrap"
+              className="group flex items-center gap-3 bg-white text-black px-8 md:px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)]"
             >
               Request an Intro Call
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
-            <span className="text-xs text-white/20 tracking-wide">No commitment required</span>
-
-            {/* Sharp Point Advantage Logo */}
-            <div className="flex flex-col items-center gap-3 bg-[#eeecea] rounded-2xl px-7 py-5 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
-              <img src="/spa-logo.png" alt="Sharp Point Advantage" className="w-24 h-24 object-contain" />
-              <div className="text-center">
-                <div className="text-[10px] font-bold uppercase text-[#1e2d4a]" style={{ letterSpacing: '0.22em' }}>
-                  Sharp Point Advantage
-                </div>
-                <div className="flex items-center justify-center gap-2 my-1">
-                  <div className="h-px w-8 bg-[#1e2d4a]/40" />
-                  <span className="text-[8px] uppercase tracking-widest text-[#1e2d4a]/60">LLC</span>
-                  <div className="h-px w-8 bg-[#1e2d4a]/40" />
-                </div>
-                <div className="text-[8px] text-[#1e2d4a]/60 tracking-widest italic">Intelligence That Works For You</div>
-              </div>
-            </div>
+            <span className="text-xs text-white/20 tracking-wide mt-3">No commitment required</span>
           </div>
 
         </div>
