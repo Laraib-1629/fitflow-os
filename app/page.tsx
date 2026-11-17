@@ -1131,13 +1131,8 @@ export default function ClinicOSLanding() {
             <span className="text-xs text-white/20 tracking-wide">No commitment required</span>
 
             {/* Sharp Point Advantage Logo */}
-            <div className="flex flex-col items-center gap-3 bg-[#e8e8e6] rounded-2xl px-7 py-5 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
-              <svg width="96" height="96" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="88" fill="none" stroke="#8a9baa" strokeWidth="5"/>
-                <path d="M125,42 L62,100 L125,158 L108,158 L45,100 L108,42 Z" fill="#1e2d4a"/>
-                <path d="M88,42 L151,100 L88,158 L105,158 L168,100 L105,42 Z" fill="#a8b4be" opacity="0.85"/>
-                <rect x="120" y="124" width="26" height="26" fill="#7a2a2a" rx="2"/>
-              </svg>
+            <div className="flex flex-col items-center gap-3 bg-[#eeecea] rounded-2xl px-7 py-5 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+              <img src="/spa-logo.png" alt="Sharp Point Advantage" className="w-24 h-24 object-contain" />
               <div className="text-center">
                 <div className="text-[10px] font-bold uppercase text-[#1e2d4a]" style={{ letterSpacing: '0.22em' }}>
                   Sharp Point Advantage
