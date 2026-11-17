@@ -1100,10 +1100,26 @@ export default function ClinicOSLanding() {
       {/* SHARP POINT ADVANTAGE — DISCUSS YOUR PRIORITIES                       */}
       {/* ══════════════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 py-20 md:py-28 px-6 border-t border-white/[0.05] bg-[#040404]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-10">
 
-          {/* Left — Logo card as visual anchor */}
-          <div className="shrink-0 flex flex-col items-center gap-4 bg-[#eeecea] rounded-3xl px-10 py-8 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
+          {/* Heading + body + email */}
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight mb-5">
+              Discuss your clinic's priorities.
+            </h2>
+            <p className="text-base md:text-lg text-white/40 font-light leading-relaxed mb-4">
+              Get in touch to discuss your challenge and whether ClinicOS would be a good fit for your practice.
+            </p>
+            <a
+              href="mailto:kile.sears@sharppointadvantage.com"
+              className="text-sm text-white/30 hover:text-white/60 transition-colors tracking-wide underline underline-offset-4 decoration-white/15 hover:decoration-white/40"
+            >
+              kile.sears@sharppointadvantage.com
+            </a>
+          </div>
+
+          {/* Logo centred */}
+          <div className="flex flex-col items-center gap-4 bg-[#eeecea] rounded-3xl px-10 py-8 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
             <img src="/spa-logo.png" alt="Sharp Point Advantage" className="w-36 h-36 object-contain" />
             <div className="text-center">
               <div className="text-[11px] font-bold uppercase text-[#1e2d4a]" style={{ letterSpacing: '0.22em' }}>
@@ -1118,20 +1134,8 @@ export default function ClinicOSLanding() {
             </div>
           </div>
 
-          {/* Right — heading + body + email + CTA */}
-          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight mb-5">
-              Discuss your clinic's priorities.
-            </h2>
-            <p className="text-base md:text-lg text-white/40 font-light leading-relaxed mb-6 max-w-lg">
-              Get in touch to discuss your challenge and whether ClinicOS would be a good fit for your practice.
-            </p>
-            <a
-              href="mailto:kile.sears@sharppointadvantage.com"
-              className="text-sm text-white/30 hover:text-white/60 transition-colors tracking-wide underline underline-offset-4 decoration-white/15 hover:decoration-white/40 mb-8"
-            >
-              kile.sears@sharppointadvantage.com
-            </a>
+          {/* CTA button */}
+          <div className="flex flex-col items-center gap-3">
             <button
               onClick={() => setIsModalOpen(true)}
               className="group flex items-center gap-3 bg-white text-black px-8 md:px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)]"
@@ -1139,7 +1143,7 @@ export default function ClinicOSLanding() {
               Request an Intro Call
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
-            <span className="text-xs text-white/20 tracking-wide mt-3">No commitment required</span>
+            <span className="text-xs text-white/20 tracking-wide">No commitment required</span>
           </div>
 
         </div>
