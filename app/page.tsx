@@ -1009,7 +1009,7 @@ export default function ClinicOSLanding() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-1">Strategic Advisor</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-1">Founder & CEO</div>
                   <div className="text-lg font-medium text-white">Kile Sears</div>
                   <div className="text-sm text-white/50 mt-0.5">Sharp Point Advantage LLC</div>
                 </div>
